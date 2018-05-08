@@ -1,6 +1,6 @@
 CREATE TABLE pings (
   id TEXT PRIMARY KEY NOT NULL,
-  date INTEGER DEFAULT (datetime('now')),
+  date INTEGER,
   userId TEXT NOT NULL,
   isFirstPing INTEGER,
   ip TEXT,
@@ -10,7 +10,7 @@ CREATE TABLE pings (
 
 CREATE TABLE reports (
   id TEXT PRIMARY KEY NOT NULL,
-  computeDate INTEGER DEFAULT (datetime('now')),
+  computeDate INTEGER,
   activeUserCount INTEGER,
   totalUserCount INTEGER
 );

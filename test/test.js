@@ -1,6 +1,7 @@
 const test = require('ava')
 const tempy = require('tempy')
 const request = require('request-promise-native')
+const moment = require('moment')
 const {BASConfig} = require('../lib/config')
 const startServer = require('../lib/server').start
 const {readFixture} = require('./util')
@@ -72,7 +73,7 @@ test('get report', async t => {
 
   t.deepEqual(res.body, {
     id: firstReportId,
-    computeDate: 'string',
+    computeDate: 'number',
     totalUserCount: 7,
     activeUserCount: 4,
     stats: 
@@ -104,7 +105,7 @@ test('recomputing the report wont change the results', async t => {
 
   t.deepEqual(res.body, {
     id: firstReportId,
-    computeDate: 'string',
+    computeDate: 'number',
     totalUserCount: 7,
     activeUserCount: 4,
     stats: 
